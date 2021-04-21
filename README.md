@@ -2,15 +2,19 @@
 
 A new Flutter project.
 
+
+Clone 
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+and
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+link to the page with the screenshot and design of the site
+
+https://dribbble.com/shots/14489305-Bookmark-App
+
+
+https://cdn.dribbble.com/users/5447989/screenshots/14489305/media/fe1c60375db9df2b7529c96495aeb6f2.png?compress=1&resize=400x300
