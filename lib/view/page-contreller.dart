@@ -26,10 +26,13 @@ class _MainHomePageViewState extends State<MainHomePageView> {
       backgroundColor: Colors.white,
       drawerScrimColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.start,
         children: [
           AppBarContainer(),
-          pages[widget.currentIndex],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: pages[widget.currentIndex],
+          ),
         ],
       ),
       bottomNavigationBar: Container(
