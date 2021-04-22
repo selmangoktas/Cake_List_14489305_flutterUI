@@ -1,4 +1,4 @@
-import 'package:bookmark_app_14489305/home-page.dart';
+import 'package:bookmark_app_14489305/view/page-contreller.dart';
 import 'package:flutter/material.dart';
 
 class MySplashApp extends StatelessWidget {
@@ -10,13 +10,16 @@ class MySplashApp extends StatelessWidget {
       builder: (context, AsyncSnapshot snapshot) {
         // Show splash screen while waiting for app resources to load:
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return MaterialApp(debugShowCheckedModeBanner: false, home: Splash());
+          return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            home: Splash(),
+          );
         } else {
           // Loading is done, return the app:
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: MainHomePageView(
-              currentIndex: 1,
+              currentIndex: 0,
             ),
           );
         }
