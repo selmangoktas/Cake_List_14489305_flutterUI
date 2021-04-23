@@ -26,12 +26,18 @@ class _MainHomePageViewState extends State<MainHomePageView> {
       backgroundColor: Colors.white,
       drawerScrimColor: Colors.white,
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
+        //crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
           AppBarContainer(),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: pages[widget.currentIndex],
+          ListView(
+            shrinkWrap: true,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: pages[widget.currentIndex],
+              ),
+            ],
           ),
         ],
       ),
@@ -45,10 +51,17 @@ class _MainHomePageViewState extends State<MainHomePageView> {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               pageViewInkWell(size, 0, Icons.home, Icons.home_outlined),
-              pageViewInkWell(size, 1, Icons.star, Icons.star_outline_outlined),
+              //pageViewInkWell(size, 1, Icons.star, Icons.star_outline_outlined),
             ],
           ),
         ),
+      ),
+      floatingActionButton: Container(
+        child: Icon(Icons.filter_9_plus),
+        width: 50,
+        height: 50,
+        color: Colors.white,
+        alignment: Alignment.bottomCenter,
       ),
     );
   }

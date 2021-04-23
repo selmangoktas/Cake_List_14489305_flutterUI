@@ -12,7 +12,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Book Marks App Example',
-      home: MySplashApp(),
+      home: SafeArea(
+        child: MySplashApp(),
+      ),
     );
   }
 }

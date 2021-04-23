@@ -8,13 +8,17 @@ class LabelContainer extends StatelessWidget {
   final TextAlign textAlign;
 
   const LabelContainer(
-      {Key key, @required this.text, this.color, this.fontsize, this.bold, this.textAlign})
+      {Key key,
+      @required this.text,
+      this.color,
+      this.fontsize,
+      this.bold,
+      this.textAlign})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: Alignment.centerLeft,
       child: Text(
         text,
         style: TextStyle(
@@ -22,7 +26,7 @@ class LabelContainer extends StatelessWidget {
           fontSize: fontsize != null ? fontsize : 30,
           fontWeight: bold != null ? bold : FontWeight.w700,
         ),
-        textAlign: textAlign!=null?textAlign:TextAlign.justify,
+        textAlign: textAlign != null ? textAlign : TextAlign.justify,
       ),
     );
   }
