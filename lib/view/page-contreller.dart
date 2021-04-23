@@ -19,6 +19,20 @@ class _MainHomePageViewState extends State<MainHomePageView> {
     HomeGridViewPage(),
     BooksMarkViewPage(),
   ];
+  var appBarDetail = [
+    {
+      "title": "Home",
+      "alert": 5,
+      "topLeftImage": "",
+      "topRightImage": "assets/images/bell1.svg"
+    },
+    {
+      "title": "Cooking",
+      "alert": 0,
+      "topLeftImage": "assets/images/leftArrow.svg",
+      "topRightImage": "assets/images/bell1.svg"
+    },
+  ];
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -29,7 +43,12 @@ class _MainHomePageViewState extends State<MainHomePageView> {
         //crossAxisAlignment: CrossAxisAlignment.stretch,
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          AppBarContainer(),
+          AppBarContainer(
+            title: appBarDetail[widget.currentIndex]['title'],
+            alert: appBarDetail[widget.currentIndex]['alert'],
+            topLeftImage: appBarDetail[widget.currentIndex]['topLeftImage'],
+            topRightImage: appBarDetail[widget.currentIndex]['topRightImage'],
+          ),
           ListView(
             shrinkWrap: true,
             children: [
@@ -73,7 +92,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
                 child: BottomBarItemWidget(
                   activeIcon: Icons.star,
                   defaultIncon: Icons.star_outline_outlined,
-                  thisIndex: 0,
+                  thisIndex: 1,
                   activeIndex: widget.currentIndex,
                   size: size,
                 ),
@@ -82,12 +101,25 @@ class _MainHomePageViewState extends State<MainHomePageView> {
           ),
         ),
       ),
-      floatingActionButton: Container(
-        child: Icon(Icons.filter_9_plus),
-        width: 50,
-        height: 50,
-        color: Colors.white,
-        alignment: Alignment.bottomCenter,
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: size.width * .4,
+          ),
+          FloatingActionButton(
+            elevation: 10,
+            onPressed: () {
+              // Add your onPressed code here!
+            },
+            child: Icon(Icons.add),
+            backgroundColor: Color(0xFF6c60e0).withOpacity(.8),
+          ),
+          SizedBox(
+            width: size.width * .4,
+          ),
+        ],
       ),
     );
   }

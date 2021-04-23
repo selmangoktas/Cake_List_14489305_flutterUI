@@ -5,9 +5,16 @@ import 'package:flutter/material.dart';
 class AppBarContainer extends StatelessWidget {
   final String title;
   final String topLeftImage;
-  final double alert;
+  final String topRightImage;
+  final int alert;
 
-  const AppBarContainer({Key key,@required this.title, this.topLeftImage, this.alert}) : super(key: key);
+  const AppBarContainer(
+      {Key key,
+      @required this.title,
+      this.topLeftImage,
+      this.topRightImage,
+      @required this.alert})
+      : super(key: key);
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -42,9 +49,12 @@ class AppBarContainer extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SvgContainer(image: 'assets/images/leftArrow.svg'),
+              SvgContainer(
+                  image: topLeftImage.isNotEmpty
+                      ? topLeftImage
+                      : 'assets/images/leftArrow.svg'),
               LabelContainer(
-                text: 'Cooking',
+                text: title,
                 color: Colors.white,
               ),
               Stack(
@@ -59,7 +69,10 @@ class AppBarContainer extends StatelessWidget {
                           child: Text(''),
                         )
                       : Container(),
-                  SvgContainer(image: 'assets/images/bell1.svg'),
+                  SvgContainer(
+                      image: topRightImage.isNotEmpty
+                          ? topRightImage
+                          : 'assets/images/bell1.svg'),
                 ],
               ),
             ],
