@@ -101,23 +101,26 @@ class _MainHomePageViewState extends State<MainHomePageView> {
           ),
         ),
       ),
-      floatingActionButton: Column(
-        mainAxisAlignment: MainAxisAlignment.end,
-        crossAxisAlignment: CrossAxisAlignment.center,
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           SizedBox(
             width: size.width * .4,
           ),
-          FloatingActionButton(
-            elevation: 10,
-            onPressed: () {
-              // Add your onPressed code here!
-            },
-            child: Icon(Icons.add),
-            backgroundColor: Color(0xFF6c60e0).withOpacity(.8),
+          SizedBox(
+            width: size.width * .3,
+            child: FloatingActionButton(
+              elevation: 10,
+              onPressed: () {
+                // Add your onPressed code here!
+              },
+              child: Icon(Icons.add),
+              backgroundColor: Color(0xFF6c60e0).withOpacity(.8),
+            ),
           ),
           SizedBox(
-            width: size.width * .4,
+            width: size.width * .3,
           ),
         ],
       ),

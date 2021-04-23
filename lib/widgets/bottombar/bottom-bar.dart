@@ -25,7 +25,9 @@ class BottomBarItemWidget extends StatelessWidget {
           Icon(
             activeIndex == thisIndex ? activeIcon : defaultIncon,
             size: 35,
-            color: Colors.black,
+            color: activeIndex == thisIndex
+                ? Color(0xFF6c60e0).withOpacity(.8)
+                : Color(0xFF6c60e0).withOpacity(.2),
           ),
         ],
       ),
