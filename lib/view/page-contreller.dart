@@ -50,8 +50,34 @@ class _MainHomePageViewState extends State<MainHomePageView> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              pageViewInkWell(size, 0, Icons.home, Icons.home_outlined),
-              //pageViewInkWell(size, 1, Icons.star, Icons.star_outline_outlined),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    widget.currentIndex = 0;
+                  });
+                },
+                child: BottomBarItemWidget(
+                  activeIcon: Icons.home, //Icons.home,
+                  defaultIncon: Icons.home_outlined,
+                  thisIndex: 0,
+                  activeIndex: widget.currentIndex,
+                  size: size,
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  setState(() {
+                    widget.currentIndex = 1;
+                  });
+                },
+                child: BottomBarItemWidget(
+                  activeIcon: Icons.star,
+                  defaultIncon: Icons.star_outline_outlined,
+                  thisIndex: 0,
+                  activeIndex: widget.currentIndex,
+                  size: size,
+                ),
+              ),
             ],
           ),
         ),
@@ -62,28 +88,6 @@ class _MainHomePageViewState extends State<MainHomePageView> {
         height: 50,
         color: Colors.white,
         alignment: Alignment.bottomCenter,
-      ),
-    );
-  }
-
-  InkWell pageViewInkWell(
-    Size size,
-    var currentIndex,
-    IconData activeIcon,
-    IconData defaultIncon,
-  ) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          widget.currentIndex = currentIndex;
-        });
-      },
-      child: BottomBarItemWidget(
-        activeIcon: activeIcon, //Icons.home,
-        defaultIncon: defaultIncon,
-        thisIndex: 0,
-        activeIndex: widget.currentIndex,
-        size: size,
       ),
     );
   }

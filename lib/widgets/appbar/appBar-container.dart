@@ -3,6 +3,11 @@ import 'package:bookmark_app_14489305/widgets/svg-container.dart';
 import 'package:flutter/material.dart';
 
 class AppBarContainer extends StatelessWidget {
+  final String title;
+  final String topLeftImage;
+  final double alert;
+
+  const AppBarContainer({Key key,@required this.title, this.topLeftImage, this.alert}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -42,7 +47,21 @@ class AppBarContainer extends StatelessWidget {
                 text: 'Cooking',
                 color: Colors.white,
               ),
-              SvgContainer(image: 'assets/images/bell1.svg'),
+              Stack(
+                alignment: Alignment.topRight,
+                children: [
+                  alert > 0
+                      ? Container(
+                          padding: EdgeInsets.zero,
+                          width: 5,
+                          height: 5,
+                          decoration: BoxDecoration(color: Colors.orange[900]),
+                          child: Text(''),
+                        )
+                      : Container(),
+                  SvgContainer(image: 'assets/images/bell1.svg'),
+                ],
+              ),
             ],
           ),
           Container(

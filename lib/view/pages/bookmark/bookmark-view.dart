@@ -1,3 +1,4 @@
+import 'package:bookmark_app_14489305/widgets/label-container.dart';
 import 'package:flutter/material.dart';
 
 class BooksMarkViewPage extends StatefulWidget {
@@ -8,8 +9,12 @@ class BooksMarkViewPage extends StatefulWidget {
 class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(child: Text('BooksMarkViewPage')),
+    return Column(
+      children: [
+     LabelContainer(
+          text: 'Categories',
+        ),
+      ],
     );
   }
 }
