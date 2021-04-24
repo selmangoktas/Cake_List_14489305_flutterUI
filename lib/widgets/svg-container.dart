@@ -17,7 +17,7 @@ class SvgContainer extends StatelessWidget {
       image,
       height: height != null ? height : 25,
       width: width != null ? width : 25,
-      color: color != null ? color : Colors.white,
+      color: color, //!= null ? color : Colors.white,
     );
   }
 }

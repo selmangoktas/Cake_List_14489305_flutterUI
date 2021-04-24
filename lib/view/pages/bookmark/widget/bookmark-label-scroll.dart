@@ -36,7 +36,6 @@ class BookMarkLabelScroll extends StatelessWidget {
             child: LabelContainer(
               text: model[index]["name"],
               textAlign: TextAlign.justify,
-              
               fontsize: 18,
               color: model[index]["active"] == "true"
                   ? Colors.white
