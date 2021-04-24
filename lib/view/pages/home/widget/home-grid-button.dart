@@ -3,54 +3,50 @@ import 'package:flutter/material.dart';
 
 var model = [
   {
-    "color": Colors.orange[100],
+    "color": Colors.orange,
     "text": "New Ideas",
-    "image": "assets/images/trash.svg"
+    "image": "assets/images/lamp.svg"
   },
+  {"color": Colors.green, "text": "Music", "image": "assets/images/music.svg"},
   {
-    "color": Colors.green[100],
-    "text": "Music",
-    "image": "assets/images/zoom.svg"
-  },
-  {
-    "color": Colors.purple[100],
+    "color": Colors.purple,
     "text": "Programming",
-    "image": "assets/images/bell.svg"
+    "image": "assets/images/monitor.svg"
   },
   {
-    "color": Colors.pink[100],
+    "color": Colors.pinkAccent,
     "text": "Cooking",
-    "image": "assets/images/trash.svg"
+    "image": "assets/images/burger.svg"
   },
   {
-    "color": Colors.pink[100],
+    "color": Colors.blue,
     "text": "Flighting",
-    "image": "assets/images/editpen.svg"
-  }
+    "image": "assets/images/flight.svg"
+  },
+  {"color": Colors.brown, "text": "Atom", "image": "assets/images/atom.svg"}
 ];
 
 class HomeGridButtonWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: GridView.builder(
-        shrinkWrap: true,
-        gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-            maxCrossAxisExtent: size.width * .5,
-            mainAxisExtent: size.width * .5,
-            childAspectRatio: 3 / 2,
-            crossAxisSpacing: 20,
-            mainAxisSpacing: 20),
-        itemCount: model.length,
-        itemBuilder: (context, index) {
-          return HomeGridButtonContainer(
-            color: model[index]['color'], //Colors.pink[100],
-            text: model[index]['text'],
-            image: model[index]['image'],
-          );
-        },
-      ),
+    return GridView.builder(
+      shrinkWrap: true,
+      physics: ScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: size.width * .5,
+          mainAxisExtent: size.width * .5,
+          childAspectRatio: 3 / 2,
+          crossAxisSpacing: 20,
+          mainAxisSpacing: 20),
+      itemCount: model.length,
+      itemBuilder: (context, index) {
+        return HomeGridButtonContainer(
+          color: model[index]['color'], //Colors.pink[100],
+          text: model[index]['text'],
+          image: model[index]['image'],
+        );
+      },
     );
   }
 }

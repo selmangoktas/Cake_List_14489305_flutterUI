@@ -1,3 +1,4 @@
+import 'package:bookmark_app_14489305/widgets/svg-container.dart';
 import 'package:flutter/material.dart';
 
 class BottomBarItemWidget extends StatelessWidget {
@@ -5,8 +6,8 @@ class BottomBarItemWidget extends StatelessWidget {
   final thisIndex;
 
   final size;
-  final IconData activeIcon;
-  final IconData defaultIncon;
+  final String activeIcon;
+  final String defaultIncon;
 
   BottomBarItemWidget({
     @required this.activeIndex,
@@ -22,13 +23,21 @@ class BottomBarItemWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(
+          SvgContainer(
+            image: activeIndex == thisIndex ? activeIcon : defaultIncon,
+            width: 35,
+            height: 35,
+            color: activeIndex == thisIndex
+                ? Color(0xFF6c60e0).withOpacity(.8)
+                : Color(0xFF6c60e0).withOpacity(.2),
+          ),
+          /*Icon(
             activeIndex == thisIndex ? activeIcon : defaultIncon,
             size: 35,
             color: activeIndex == thisIndex
                 ? Color(0xFF6c60e0).withOpacity(.8)
                 : Color(0xFF6c60e0).withOpacity(.2),
-          ),
+          ),*/
         ],
       ),
     );

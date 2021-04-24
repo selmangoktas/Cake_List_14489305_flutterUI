@@ -1,4 +1,4 @@
-import 'package:bookmark_app_14489305/widgets/label-container.dart';
+import 'package:bookmark_app_14489305/widgets/label/label-container.dart';
 import 'package:bookmark_app_14489305/widgets/svg-container.dart';
 import 'package:flutter/material.dart';
 
@@ -19,13 +19,14 @@ class AppBarContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Container(
+      margin: EdgeInsets.zero,
       padding: EdgeInsets.only(
-        top: 10,
+        top: 20,
         left: 10,
         right: 10,
         bottom: 10,
       ),
-      alignment: Alignment.topCenter,
+      //alignment: Alignment.topCenter,
       decoration: BoxDecoration(
         color: Color(0xFF6c60e0).withOpacity(.8),
         borderRadius: BorderRadius.only(
@@ -34,7 +35,7 @@ class AppBarContainer extends StatelessWidget {
         ),
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.3),
+            color: Colors.black.withOpacity(0.1),
             spreadRadius: 3,
             blurRadius: 3,
             offset: Offset(0, 5), // changes position of shadow

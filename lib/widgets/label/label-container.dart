@@ -23,10 +23,12 @@ class LabelContainer extends StatelessWidget {
         text,
         style: TextStyle(
           color: color != null ? color : Color(0xFF868696),
-          fontSize: fontsize != null ? fontsize : 30,
+          fontSize: fontsize != null ? fontsize : 25,
           fontWeight: bold != null ? bold : FontWeight.w700,
         ),
         textAlign: textAlign != null ? textAlign : TextAlign.justify,
+        overflow: TextOverflow.ellipsis,
+        maxLines: 1,
       ),
     );
   }
