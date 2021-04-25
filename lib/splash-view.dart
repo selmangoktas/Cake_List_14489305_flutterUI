@@ -19,7 +19,7 @@ class MySplashApp extends StatelessWidget {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             home: MainHomePageView(
-              currentIndex: 1,
+              currentIndex: 0,
             ),
           );
         }

@@ -49,7 +49,7 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
             child: Container(
               child: ListView.builder(
                 shrinkWrap: true,
-                physics: ScrollPhysics(),
+                physics: NeverScrollableScrollPhysics(),
                 itemCount: 10,
                 itemBuilder: (context, index) {
                   return Container(
@@ -92,6 +92,13 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
                                 spreadRadius: 1.1,
                               )
                             ],
+                          ),
+                          child: SvgContainer(
+                            image: 'assets/cakes/breey.svg',
+                            width: 80,
+                            height: 80,
+
+                            //color: Colors.grey,
                           ),
                         ),
                         Column(

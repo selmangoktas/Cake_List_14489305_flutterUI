@@ -44,7 +44,7 @@ class _MainHomePageViewState extends State<MainHomePageView> {
       maintainBottomViewPadding: true,
       minimum: EdgeInsets.all(1),
       child: Scaffold(
-        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(size.width * .5),
           child: Padding(
