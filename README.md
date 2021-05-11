@@ -2,8 +2,9 @@
 
 A new Flutter project.
 
+<Bookmark-Cake-UI-flutter>
 
-Clone 
+| <img src="/assets/demo/cake1.jpg" width="250"> | <img src="/assets/demo/cake2.jpg" width="250"> |
 
 ## Getting Started
 
@@ -11,10 +12,6 @@ This project is a starting point for a Flutter application.
 
 and
 
-
 link to the page with the screenshot and design of the site
 
 https://dribbble.com/shots/14489305-Bookmark-App
-
-
-https://cdn.dribbble.com/users/5447989/screenshots/14489305/media/fe1c60375db9df2b7529c96495aeb6f2.png?compress=1&resize=400x300

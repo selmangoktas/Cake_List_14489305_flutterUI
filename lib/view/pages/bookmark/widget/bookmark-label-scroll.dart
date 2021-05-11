@@ -2,7 +2,7 @@ import 'package:bookmark_app_14489305/widgets/label/label-container.dart';
 import 'package:flutter/material.dart';
 
 var model = [
-  {"name": "All111111111111111", "active": "false"},
+  {"name": "All", "active": "false"},
   {"name": "Cake", "active": "true"},
   {"name": "Fast Food", "active": "false"},
   {"name": "Sugar", "active": "false"},

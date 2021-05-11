@@ -10,6 +10,18 @@ class BooksMarkViewPage extends StatefulWidget {
 }
 
 class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
+  var cakes = [
+    {'name': 'Vanilla Cake', 'image': 'assets/cakes/breey.svg'},
+    {'name': 'Chery Cake', 'image': 'assets/cakes/chery.svg'},
+    {'name': 'Cookies', 'image': 'assets/cakes/cookies.svg'},
+    {'name': 'Donut', 'image': 'assets/cakes/donut.svg'},
+    {'name': 'Heart Cake', 'image': 'assets/cakes/heart.svg'},
+    {'name': 'Love Cake', 'image': 'assets/cakes/love.svg'},
+    {'name': 'Man Cake', 'image': 'assets/cakes/man.svg'},
+    {'name': 'Single Cake', 'image': 'assets/cakes/single.svg'},
+    {'name': 'Weding Cake', 'image': 'assets/cakes/weding.svg'},
+    {'name': 'Cheese Cake', 'image': 'assets/cakes/cheese.svg'},
+  ];
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -50,13 +62,13 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
               child: ListView.builder(
                 shrinkWrap: true,
                 physics: NeverScrollableScrollPhysics(),
-                itemCount: 10,
+                itemCount: cakes.length,
                 itemBuilder: (context, index) {
                   return Container(
                     margin: EdgeInsets.only(top: 8),
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: Colors.pink.withOpacity(.2),
+                      color: Colors.pink[50].withOpacity(.3),
                       borderRadius: BorderRadius.all(
                         Radius.circular(20),
                       ),
@@ -76,11 +88,7 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            image: DecorationImage(
-                              image:
-                                  AssetImage('assets/cakes/breey.svg'), //selman
-                            ),
-                            color: Colors.pink.withOpacity(.2),
+                            color: Colors.pink[50].withOpacity(.3),
                             borderRadius: BorderRadius.all(
                               Radius.circular(20),
                             ),
@@ -94,7 +102,8 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
                             ],
                           ),
                           child: SvgContainer(
-                            image: 'assets/cakes/breey.svg',
+                            image: cakes[index]
+                                ['image'], //'assets/cakes/breey.svg',
                             width: 80,
                             height: 80,
 
@@ -102,13 +111,14 @@ class _BooksMarkViewPageState extends State<BooksMarkViewPage> {
                           ),
                         ),
                         Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             LabelContainer(
-                              text: 'Vanilla Cake',
+                              text: cakes[index]['name'], //'Vanilla Cake',
                               color: Color(0xFF868696),
                             ),
                             Row(
+                              mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 SvgContainer(
                                   image: 'assets/images/bell.svg',
